@@ -1,18 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// const heading =React.createElement("h1",{id:"heading"},"WELCOME TO React!!!");
-//         const root=ReactDOM.createRoot(document.getElementById("root"));
-//         root.render(heading);
 
-const parent = React.createElement("div", { id: "parent" },
-    [React.createElement("div", { id: "child" },
-     [React.createElement("h1", {}, "I am in parent heading 1 eeee"),
-    React.createElement("h2", {}, "I am in parent heading 2"),]),
+const heading = React.createElement("h1", { id: "heading" }, "My First React Heading");
+const jsxHeading=<h1 id="heading">Welcome To JSX in Raect</h1>
+const Title=()=>(
+    <h1>Inside Heading Compnent</h1>
+);
+//Component Compsition
+const HeadingComponent=()=>(
+    <div id="component">
+       
+        <h1 className="heading">I Am in React Function Compnent</h1>
+        <Title/>
+    </div>
+)
 
-    React.createElement("div", { id: "child2" }, 
-    [React.createElement("h1", {}, "I am in parent child2"),
-    React.createElement("h2", {}, "I am in parent child2 header 2"),])
- ]);
 
- const root=ReactDOM.createRoot(document.getElementById("root"));
- root.render(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent/>);
